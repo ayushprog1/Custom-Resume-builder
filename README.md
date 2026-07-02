@@ -1,8 +1,54 @@
 # TailorResume
 
-A cross-platform desktop app that tailors your LaTeX resume to any job description using Google Gemini AI, then compiles it to a polished `Resume.pdf`.
+> **Open browser → Copy job description → Paste → Click Generate → Resume.pdf ready in your folder.**
 
-Built with **Tauri v2** (Rust backend) + **React/TypeScript** frontend.
+A cross-platform desktop app that makes applying to jobs effortless. After a one-time setup, your workflow is:
+
+```
+┌─────────────────────────────────┐       ┌─────────────────────────────┐
+│  Job listing on browser         │       │  TailorResume app           │
+│                                 │       │                             │
+│  ┌───────────────────────┐      │       │  ┌─────────────────────┐   │
+│  │ Software Engineer     │      │  Ctrl │  │ Job Description:    │   │
+│  │ at Acme Corp          │──────┼── C ──┼──│                     │   │
+│  │                       │      │  ┌┘   │  │ [pasted JD here    │   │
+│  │ Requires:             │      │       │  │  .................. ]│   │
+│  │ - React, TypeScript   │      │       │  │                     │   │
+│  │ - 5+ yrs experience   │      │       │  │ [Generate & Save]   │   │
+│  │ - Leadership          │      │       │  │                     │   │
+│  └───────────────────────┘      │       │  └─────────────────────┘   │
+│                                 │       │                             │
+└─────────────────────────────────┘       └─────────────────────────────┘
+                                                  │
+                                                  ▼
+                                        ┌─────────────────────┐
+                                        │  Resume.pdf          │
+                                        │  ✔ Ready in your     │
+                                        │    output folder     │
+                                        │  ✔ Previous one      │
+                                        │    auto-replaced     │
+                                        └─────────────────────┘
+```
+
+**No searching for resumes. No renaming files. No manual editing.** Just paste, click, and the tailored PDF instantly lands in your selected folder — the same spot every time, always named `Resume.pdf`, always overwriting the old one.
+
+---
+
+## The Problem It Solves
+
+Applying to jobs usually involves:
+1. Finding your latest resume file
+2. Wondering which version is the most recent
+3. Manually editing or duplicating to avoid overwriting
+4. Uploading the wrong file because you have 20 versions
+
+**TailorResume eliminates all of that.** You set your output folder once. Every time you apply:
+- Open the job posting on one side of your screen
+- Open TailorResume on the other side
+- Copy-paste the job description, click **Generate & Save Resume.pdf**
+- Switch back to the job application and upload `Resume.pdf` — it's already there, freshly tailored
+
+The previous `Resume.pdf` is automatically replaced. You never have to manage files.
 
 ---
 
@@ -15,7 +61,7 @@ TailorResume takes your existing resume (LaTeX or structured profile) and a job 
 - **Optimize your projects** — AI ranks all your projects by relevance to the JD and picks only the **top 2-3 most relevant** ones, rewriting their descriptions to match the job's language
 - **Tailor every section** — work experience bullet points, education highlights, certifications, and awards are all rewritten to emphasize what matters for *this* job
 
-The result is a tailored LaTeX document compiled into `Resume.pdf`, saved to your chosen output folder.
+The result is a tailored LaTeX document compiled into `Resume.pdf`, saved to your chosen output folder — always the same name, always overwritten.
 
 ---
 
@@ -52,7 +98,7 @@ The result is a tailored LaTeX document compiled into `Resume.pdf`, saved to you
 
 ```bash
 # 1. Clone the repo
-git clone https://github.com/USER/tailor-resume.git
+git clone https://github.com/YOUR_USERNAME/tailor-resume.git
 cd tailor-resume
 
 # 2. Install dependencies
@@ -78,7 +124,7 @@ The installer will be at `src-tauri/target/release/bundle/nsis/TailorResume_*.ex
 
 1. **Add your API key** — On first launch, go to **Settings** and paste your Google Gemini API key. It's stored securely in your OS keychain.
 
-2. **Set your output folder** — In Settings, choose where `Resume.pdf` should be saved. If a file with that name already exists, it will be replaced.
+2. **Set your output folder** — In Settings, choose where `Resume.pdf` should be saved. This becomes your "one-click apply" folder. If a file with that name already exists, it will be replaced.
 
 3. **Import your resume (recommended)** — Go to the **Import** tab and paste your existing LaTeX resume. This stores it as "My Original LaTeX" and becomes a template option in the Generate tab. The more content you include, the better the AI can tailor it.
 
