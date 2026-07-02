@@ -1,54 +1,27 @@
-# TailorResume
+﻿# TailorResume
 
-> **Open browser → Copy job description → Paste → Click Generate → Resume.pdf ready in your folder.**
+A cross-platform desktop app that tailors your LaTeX resume to any job description using Google Gemini AI, then compiles it to a polished `Resume.pdf`.
 
-A cross-platform desktop app that makes applying to jobs effortless. After a one-time setup, your workflow is:
-
-```
-┌─────────────────────────────────┐       ┌─────────────────────────────┐
-│  Job listing on browser         │       │  TailorResume app           │
-│                                 │       │                             │
-│  ┌───────────────────────┐      │       │  ┌─────────────────────┐   │
-│  │ Software Engineer     │      │  Ctrl │  │ Job Description:    │   │
-│  │ at Acme Corp          │──────┼── C ──┼──│                     │   │
-│  │                       │      │  ┌┘   │  │ [pasted JD here    │   │
-│  │ Requires:             │      │       │  │  .................. ]│   │
-│  │ - React, TypeScript   │      │       │  │                     │   │
-│  │ - 5+ yrs experience   │      │       │  │ [Generate & Save]   │   │
-│  │ - Leadership          │      │       │  │                     │   │
-│  └───────────────────────┘      │       │  └─────────────────────┘   │
-│                                 │       │                             │
-└─────────────────────────────────┘       └─────────────────────────────┘
-                                                  │
-                                                  ▼
-                                        ┌─────────────────────┐
-                                        │  Resume.pdf          │
-                                        │  ✔ Ready in your     │
-                                        │    output folder     │
-                                        │  ✔ Previous one      │
-                                        │    auto-replaced     │
-                                        └─────────────────────┘
-```
-
-**No searching for resumes. No renaming files. No manual editing.** Just paste, click, and the tailored PDF instantly lands in your selected folder — the same spot every time, always named `Resume.pdf`, always overwriting the old one.
+Built with **Tauri v2** (Rust backend) + **React/TypeScript** frontend.
 
 ---
 
-## The Problem It Solves
+## The Idea
 
-Applying to jobs usually involves:
-1. Finding your latest resume file
-2. Wondering which version is the most recent
-3. Manually editing or duplicating to avoid overwriting
-4. Uploading the wrong file because you have 20 versions
+This is the core reason this project exists.
 
-**TailorResume eliminates all of that.** You set your output folder once. Every time you apply:
-- Open the job posting on one side of your screen
-- Open TailorResume on the other side
-- Copy-paste the job description, click **Generate & Save Resume.pdf**
-- Switch back to the job application and upload `Resume.pdf` — it's already there, freshly tailored
+**Applying to jobs should take seconds, not minutes.** After a one-time setup, your daily workflow becomes this simple:
 
-The previous `Resume.pdf` is automatically replaced. You never have to manage files.
+1. Open the job listing in your browser on one side of the screen.
+2. Open TailorResume on the other side.
+3. Copy the job description from the browser.
+4. Paste it into TailorResume.
+5. Click **Generate & Save Resume.pdf**.
+6. That's it. A freshly tailored `Resume.pdf` appears in the folder you selected during setup.
+
+You never have to search for your resume. You never have to rename files. You never have to wonder which version is the latest. The output folder is set once and stays the same forever. Every new generation produces a file named exactly `Resume.pdf` in that folder. If a `Resume.pdf` already exists there from a previous application, **it is automatically replaced** with the new one. You always have exactly one resume file, always current, always in the same place.
+
+This means you can apply to job after job in rapid succession. Browser on the left, TailorResume on the right. Paste, click, switch back to the browser, upload `Resume.pdf`, move to the next job. No file management, no clutter, no friction.
 
 ---
 
@@ -61,7 +34,7 @@ TailorResume takes your existing resume (LaTeX or structured profile) and a job 
 - **Optimize your projects** — AI ranks all your projects by relevance to the JD and picks only the **top 2-3 most relevant** ones, rewriting their descriptions to match the job's language
 - **Tailor every section** — work experience bullet points, education highlights, certifications, and awards are all rewritten to emphasize what matters for *this* job
 
-The result is a tailored LaTeX document compiled into `Resume.pdf`, saved to your chosen output folder — always the same name, always overwritten.
+The result is a tailored LaTeX document compiled into `Resume.pdf`, saved to your chosen output folder.
 
 ---
 
