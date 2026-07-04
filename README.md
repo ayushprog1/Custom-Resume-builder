@@ -71,7 +71,7 @@ The result is a tailored LaTeX document compiled into `Resume.pdf`, saved to you
 
 ```bash
 # 1. Clone the repo
-git clone https://github.com/YOUR_USERNAME/tailor-resume.git
+git clone https://github.com/ayushprog1/tailor-resume.git
 cd tailor-resume
 
 # 2. Install dependencies
